@@ -274,24 +274,7 @@ flowchart TD
 4. **Apply Rotations & Scaling:** 8 angles, 5 scales.
 5. **Stop at First Success:** Return result early if any method decodes the QR.
 
-#### Decoding Algorithm
 
-```mermaid
-flowchart TD
-    A[Detected QR Crop]
-    A --> B{15+ Preprocessing Methods}
-    B --> C[Try QReader]
-    B --> D[Try PyZBar]
-    B --> E[Try OpenCV QRCodeDetector]
-    C --> F{8 Rotations × 5 Scales}
-    D --> F
-    E --> F
-    F --> G{Success?}
-    G -- Yes --> H[Return Decoded Value]
-    G -- No --> I[Try Next Combination]
-```
-
----
 
 #### Example Python Decoding Loop
 
