@@ -11,14 +11,14 @@ The pipeline consists of two main stages:
 
 ### Key Features
 
-- ✅ **High Accuracy**: 87.7% QR code decoding success rate
-- ✅ **Robust Detection**: YOLOv8-based detection with 179 QR codes found across 50 test images
-- ✅ **Multi-Strategy Decoding**: 3 different decoding libraries with 15+ preprocessing techniques
-- ✅ **Geometric Transformations**: Rotations and scaling for orientation-agnostic decoding
-- ✅ **Production Ready**: Complete pipeline with validation and error handling
-- ✅ **Easy Reproduction**: Single command to reproduce all results from scratch
+-  **High Accuracy**: 87.7% QR code decoding success rate
+-  **Robust Detection**: YOLOv8-based detection with 179 QR codes found across 50 test images
+-  **Multi-Strategy Decoding**: 3 different decoding libraries with 15+ preprocessing techniques
+-  **Geometric Transformations**: Rotations and scaling for orientation-agnostic decoding
+-  **Production Ready**: Complete pipeline with validation and error handling
+-  **Easy Reproduction**: Single command to reproduce all results from scratch
 
-## 🎯 Results Summary
+##  Results Summary
 
 | Metric | Value | Details |
 |--------|-------|---------|
@@ -38,11 +38,11 @@ python run_all.py --input_dir data/demo_images/QR_Dataset/test_images --output_d
 ```
 
 **What this command does:**
-1. ✅ Installs ultralytics and all dependencies
-2. ✅ Runs YOLOv8 detection on all 50 test images
-3. ✅ Applies enhanced decoding with 15+ preprocessing techniques
-4. ✅ Validates output formats and success rates
-5. ✅ Generates final submission files
+1. Installs ultralytics and all dependencies
+2. Runs YOLOv8 detection on all 50 test images
+3. Applies enhanced decoding with 15+ preprocessing techniques
+4. Validates output formats and success rates
+5. Generates final submission files
 
 **Expected outputs:**
 - `outputs/submission_detection_1.json`: Detection results
@@ -122,9 +122,14 @@ python -c "import json; data=json.load(open('outputs/submission_decoding_2.json'
 
 ```
 ├── data/
+│   └── prepared/
+            └── images/
+                 └──  train
+                 └── val                   
 │   └── demo_images/
 │       └── QR_Dataset/
-│           └── test_images/          # 50 test images (img201.jpg to img250.jpg)
+│           └── test_images/# 50 test images (img201.jpg to img250.jpg)
+|           |___train images 200(THIS IS SUPPOSED TO BE DOWNLOADED FROM THE LINK GIVEN IN Step5)
 ├── outputs/                          # Generated results directory
 │   ├── submission_detection_1.json   # Stage 1: Detection results (bboxes only)
 │   └── submission_decoding_2.json    # Stage 2: Decoding results (bboxes + values)
@@ -140,7 +145,7 @@ python -c "import json; data=json.load(open('outputs/submission_decoding_2.json'
 ├── weights/                          # Directory for model weights (if custom trained)
 ├── yolov8n.pt                        # Pre-trained YOLOv8 nano model weights
 ├── requirements.txt                  # Python package dependencies with versions
-├── run_all.py                        # 🚀 MAIN SCRIPT: Complete pipeline automation
+├── run_all.py                        # MAIN SCRIPT: Complete pipeline automation
 ├── infer_enhaced.py                  # Enhanced YOLOv8 inference for QR detection
 ├── decode_enhaced.py                 # Enhanced multi-strategy QR decoding
 ├── decode_classify.py                # Basic decoding (for comparison/benchmarking)
@@ -276,7 +281,14 @@ wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
 ### Step 5: Prepare Test Data
 
 **Required directory structure:**
+
 ```
+The dataset can be accessed by downloading from this Google Drive link: [QR Dataset](https://drive.google.com/file/d/1YCQggB6DdBEeIeBJy_odCW8ma_dq6Fg9/view?usp=sharing)
+
+**Download and Setup Instructions:**
+1. Download the dataset file from the link above
+2. Extract the contents to the `data/` folder in the project root
+3. Ensure the following directory structure is created:
 data/demo_images/QR_Dataset/test_images/
 ├── img201.jpg
 ├── img202.jpg
