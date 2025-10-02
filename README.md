@@ -37,6 +37,9 @@ The solution works in **two main stages**:
 - **📝 Output:** Structured JSON files for both detection and decoding.
 
 ---
+## Output 
+<img width="1175" height="930" alt="Screenshot 2025-10-01 174126" src="https://github.com/user-attachments/assets/96c6027a-8e68-41f9-ab77-acfa402ae9c0" />
+
 
 ## 📈 Results Summary
 
